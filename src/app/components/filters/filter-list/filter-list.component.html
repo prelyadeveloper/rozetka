@@ -1,0 +1,7 @@
+<div (click)="animate()"><span >{{filters.title }}</span>
+    <app-filter-detail [filter_id]="filters.filter_type_id"></app-filter-detail ></div>
+<ul [@myAwesomeAnimation]="state" >
+  <li *ngFor="let item of filters.filters">
+    <app-filter-item [filterValue]="item"></app-filter-item>
+  </li>
+</ul>

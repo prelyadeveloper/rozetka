@@ -1,0 +1,25 @@
+div{
+  padding-left: 36px;
+  height: 30px;
+  position: relative;
+
+  span{
+    padding: 5px 0;
+    display: inline-block;
+  }
+  input{
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 23px;
+    appearance: none;
+    background-image: url("assets/images/sprite.svg");
+    outline: none;
+    cursor: pointer;
+      background-position: -905px -538px;
+
+    &:checked{
+      background-position: -905px -716px;
+    }
+  }
+}

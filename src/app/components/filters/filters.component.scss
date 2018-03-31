@@ -1,0 +1,11 @@
+ul li::ng-deep li, ul li{
+  list-style: none;
+}
+
+ul{
+  width: 209px;
+  &::ng-deep ul{
+    margin: 0;
+    padding: 0;
+  }
+}
