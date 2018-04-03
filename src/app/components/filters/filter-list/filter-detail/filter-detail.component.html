@@ -1,9 +1,8 @@
-<div  >
+<div >
     <span  (clickOutside)="custom($event)" [appOutsideClick]="show" class="filter-detail"  (click)="showFilterDecr(filter_id)">
          <div class="filter-description"  [@showFilterDescr]="show">
         {{filterDescr?.title}}
         {{filterDescr?.description}}
     </div>
     </span>
-
 </div>

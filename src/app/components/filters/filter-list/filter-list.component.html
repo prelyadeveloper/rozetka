@@ -1,7 +1,10 @@
 <div (click)="animate()"><span >{{filters.title }}</span>
     <app-filter-detail [filter_id]="filters.filter_type_id"></app-filter-detail ></div>
 <ul [@myAwesomeAnimation]="state" >
+    {{ disabledCount(filters)}}-
   <li *ngFor="let item of filters.filters">
-    <app-filter-item [filterValue]="item"></app-filter-item>
+    <app-filter-item [checked]="ifChecked(item.id)" (filterChanged)="filterChanged2($event)" [filterValue]="item">
+    </app-filter-item>
   </li>
 </ul>
+<!--{{ countDisabled}}-->

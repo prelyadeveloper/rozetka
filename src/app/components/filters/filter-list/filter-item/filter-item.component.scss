@@ -2,10 +2,17 @@ div{
   padding-left: 36px;
   height: 30px;
   position: relative;
-
-  span{
+  font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+;
+  span.filter-name{
     padding: 5px 0;
     display: inline-block;
+    font-size: 13px;
+  }
+  span.filter-name > .filter-amount{
+    font-style: normal;
+    color: #999;
+    font-size: 12px;
   }
   input{
     position: absolute;
@@ -20,6 +27,10 @@ div{
 
     &:checked{
       background-position: -905px -716px;
+    }
+
+    &:disabled{
+      background-position: -905px -639px;
     }
   }
 }

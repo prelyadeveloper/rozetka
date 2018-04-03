@@ -1,13 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 import {forEach} from "@angular/router/src/utils/collection";
 import {FiltersService} from "../../services/filters.service";
 import {Filters} from "./filter";
-// export interface Filters {
-//     [key: string]: Array<{id: number, value: string, type: string}>,
-//      [id:number]: number
-// }
-
 
 @Component({
     selector: 'app-filters',
@@ -17,25 +12,17 @@ import {Filters} from "./filter";
 })
 
 
-
-
 export class FiltersComponent implements OnInit {
 
+    @Input() filters: Filters[];
+    @Input()  savedFilters;
+    @Output() changedFilters = new EventEmitter();
 
-    public filters: Filters[];
-    constructor(private fl: FiltersService) {
+    ngOnInit() {}
 
-        this.fl.getFilters('mobile').subscribe(value => {
-             this.filters = value;
-             console.log(this.filters);
-        });
+    filterChanged(event) {
+        this.changedFilters.emit(event);
     }
 
-    func(){
-
-    }
-
-    ngOnInit() {
-    }
 
 }

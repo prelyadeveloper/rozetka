@@ -25,11 +25,10 @@ export class FilterDetailComponent implements OnInit {
   show = 'hidden';
   constructor(private fldescr: FiltersService, private _elementRef: ElementRef) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 
-  custom(e){
+  custom(e) {
     this.show = 'hidden';
   }
 

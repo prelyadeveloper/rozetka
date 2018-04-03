@@ -13,6 +13,19 @@ import { FilterDecriptionComponent } from './components/filters/filter-list/filt
 import {ClickOutsideModule} from "ng-click-outside";
 import { OutsideClickDirective } from './directives/outside-click.directive';
 import { AdminkaComponent } from './pages/adminka/adminka.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { ItemControllComponent } from './components/item-controll/item-controll.component';
+import { NestedFormComponent } from './components/nested-form/nested-form.component';
+import { ItemsArrayComponent } from './components/items-array/items-array.component';
+import { AsyncLocalStorageModule } from 'angular-async-local-storage';
+import {ProductsPageComponent} from "./pages/products-page/products-page.component";
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+    { path : 'products/:type', component: ProductsPageComponent}
+];
+
 
 @NgModule({
   declarations: [
@@ -24,14 +37,23 @@ import { AdminkaComponent } from './pages/adminka/adminka.component';
     FilterDetailComponent,
     FilterDecriptionComponent,
     OutsideClickDirective,
-    AdminkaComponent
+    AdminkaComponent,
+    ItemControllComponent,
+    NestedFormComponent,
+    ItemsArrayComponent,
+      ProductsPageComponent,
+      ProductItemComponent
 
   ],
   imports: [
     BrowserModule,
       BrowserAnimationsModule,
       HttpClientModule,
-      ClickOutsideModule
+      ClickOutsideModule,
+      ReactiveFormsModule,
+      AsyncLocalStorageModule,
+      RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

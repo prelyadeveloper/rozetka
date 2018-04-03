@@ -1,0 +1,24 @@
+
+<div class="col-lg-4">
+  <app-filters (changedFilters)="filterChanged($event)" [filters]="filters" [savedFilters]="savedFilters"></app-filters>
+</div>
+<div class="col-lg-8">
+  <!--<app-product-item></app-product-item>-->
+
+  <div class="row">
+  <div class="col-lg-4">
+  <app-filters></app-filters>
+  </div>
+  <div class="col-lg-8">
+    <app-product-item [product]="product" class="col-lg-4" *ngFor="let product of products"></app-product-item>
+  <!--<div class="col-lg-4" *ngFor="let product of products">-->
+  <!--<p>-->
+  <!--{{product.title}}-->
+  <!--</p>-->
+  <!--<p>-->
+  <!--{{product.price}}-->
+  <!--</p>-->
+  <!--</div>-->
+  </div>
+  </div>
+</div>
